@@ -1,0 +1,77 @@
+// John, a diligent student, eagerly awaits his exam results. He has taken three subjects and needs to know how he performed. Assist him by writing a program that takes his marks in these subjects, and determines average marks, highest marks, and lowest marks based on choices.
+
+// Input format :
+// The first line of input contains an integer representing the mark of the first subject.
+
+// The second line of input contains an integer representing the mark of the second subject.
+
+// The third line of input contains an integer representing the mark of the third subject.
+
+// The last line of input represents the choices (1 - Average marks, 2 - Highest Marks, 3 - Lowest Marks).
+
+// Output format :
+// The output prints the result based on choices.
+
+// if the choice is 1, the output prints "Average Marks: " followed by the calculated (double value) average marks.
+
+// If the choice is 2, the output prints "Highest Marks: " followed by the (double value) highest marks.
+
+// If the choice is 3, the output prints "Lowest marks: " followed by the (double value) lowest marks.
+
+
+
+// Refer to sample outputs for formatting specifications.
+
+// Code constraints :
+// The given test cases fall under the following constraints:
+
+// 1 ≤ marks of subject ≤ 100
+
+// Sample test cases :
+// Input 1 :
+// 62
+// 77
+// 57
+// 1
+// Output 1 :
+// Average Marks: 65.33
+// Input 2 :
+// 98
+// 95
+// 92
+// 2
+// Output 2 :
+// Highest Marks: 98.0
+// Input 3 :
+// 46
+// 52
+// 50
+// 3
+// Output 3 :
+// Lowest Marks: 46.0
+
+
+
+public static void main(String[] args) {
+        //Type your code here
+        Scanner sc=new Scanner(System.in);
+        int marks=sc.nextInt();
+        int marks2=sc.nextInt();
+        int marks3=sc.nextInt();
+        int c=sc.nextInt();
+        sc.close();
+        switch(c){
+            case 1:
+                System.out.printf("Average Marks: %.2f%n",(marks+marks2+marks3)/3.0);
+                break;
+            case 2:
+                System.out.println("Highest Marks: "+(double)Math.max(marks,(Math.max(marks2,marks3))));
+                break;
+            case 3:
+                
+                System.out.println("Lowest Marks: "+(double)Math.min(marks,(Math.min(marks2,marks3))));
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+    }
